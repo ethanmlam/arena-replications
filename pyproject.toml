@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "arena-replications"
+version = "0.1.0"
+description = "A small, reproducible AI-control experiment harness"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.8", "pyyaml>=6.0", "pandas>=2.2", "matplotlib>=3.8"]
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "ruff>=0.5"]
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

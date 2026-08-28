@@ -27,18 +27,22 @@ The failing tests in `tests/test_agent_loop.py` are the spec. Implement `src/are
 
 - [ ] Agent tool-calling loop from scratch
 - [ ] Docker sandbox with no network, read-only root, explicit mounts, timeout, CPU/memory caps, and bounded output
-- [ ] Task x mode x seed eval runner with bounded concurrency
+- [ ] Task × mode × seed eval runner with bounded concurrency
 - [ ] Honest and attack policies for one small code-sabotage setting
 - [ ] Trajectory monitor with a numeric suspicion score and reasons
 - [ ] Red-team pass that tries to evade the monitor
 - [ ] Pre-register threshold, then report catch rate and false-positive rate
 - [ ] Compare the small implementation with ControlArena/Inspect after the from-scratch version works
 
+## Experiment contract
+
+Each task has a main objective and, in attack mode, a hidden side objective. The same sandbox and scorer run in honest and attack modes. The monitor sees a defined projection of the trajectory. Report safety and usefulness together. Keep every seed and failed run.
+
 ## Sources
 
-- [ControlArena documentation](https://control-arena.aisi.org.uk/)
-- [Neolithic founding MTS role](https://neolithic.org/careers/founding-member-of-technical-staff)
-- [Inspect AI](https://inspect.aisi.org.uk/)
+- [ControlArena documentation](https://control-arena.aisi.org.uk/) - reference architecture: settings, policies, monitors, tools, scorers, eval, analysis.
+- [Neolithic founding MTS role](https://neolithic.org/careers/founding-member-of-technical-staff) - target engineering bar: serious agent scaffolds/eval pipelines and tooling for AI-control experiments.
+- [Inspect AI](https://inspect.aisi.org.uk/) - later comparison point for evaluation and sandbox semantics.
 
 ## Safety boundary
 
